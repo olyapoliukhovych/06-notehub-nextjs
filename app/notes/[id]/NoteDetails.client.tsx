@@ -15,6 +15,7 @@ export default function NoteDetailsClient() {
   } = useQuery({
     queryKey: ['notes', id],
     queryFn: () => fetchNoteById(id as string),
+    refetchOnMount: false,
   });
 
   if (isLoading) return <p>Loading, please wait...</p>;

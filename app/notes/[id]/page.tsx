@@ -1,7 +1,10 @@
 import { fetchNoteById } from '@/lib/api';
 import { dehydrate, HydrationBoundary, QueryClient } from '@tanstack/react-query';
 import NoteDetailsClient from './NoteDetails.client';
-import { Props } from '@/types/note';
+
+export type Props = {
+  params: Promise<{ id: string }>;
+};
 
 export default async function NotePage({ params }: Props) {
   const { id } = await params;
